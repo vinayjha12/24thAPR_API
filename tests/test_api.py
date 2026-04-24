@@ -80,7 +80,7 @@ def test_tc004_create_project_duplicate_name():
     url = f"{BASE_URL}/api/project/create_project"
     headers = {
         **COMMON_HEADERS,
-        "Authorization": "Bearer valid_jwt_token_placeholder",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2ODM2NDI3LCJpYXQiOjE3NzY3NTAwMjcsImp0aSI6ImZlN2I2MmYzMjRlNDQ2ODdhZDFhYzNjYTQ0MzdlMDI0IiwidXNlcl9pZCI6NDc0fQ.vByXm-Rm5PMNsoiM5TDJXA--mKo4DKgGOHm3kKlUNeg",
         "Content-Type": "application/json"
     }
     request_body = {
