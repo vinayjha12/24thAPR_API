@@ -2,7 +2,7 @@ import pytest
 import requests
 
 # ==================== GLOBAL CONFIGURATION ====================
-BASE_URL = "https://api.example.com"
+BASE_URL = "http://172.17.193.128"
 
 COMMON_HEADERS = {
     "Content-Type": "application/json"
@@ -18,7 +18,7 @@ def test_tc001_create_project_success():
     url = f"{BASE_URL}/api/project/create_project"
     headers = {
         **COMMON_HEADERS,
-        "Authorization": "Bearer valid_jwt_token_placeholder",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2ODM2NDI3LCJpYXQiOjE3NzY3NTAwMjcsImp0aSI6ImZlN2I2MmYzMjRlNDQ2ODdhZDFhYzNjYTQ0MzdlMDI0IiwidXNlcl9pZCI6NDc0fQ.vByXm-Rm5PMNsoiM5TDJXA--mKo4DKgGOHm3kKlUNeg",
         "Content-Type": "application/json"
     }
     request_body = {
@@ -46,7 +46,7 @@ def test_tc002_create_project_missing_name():
     url = f"{BASE_URL}/api/project/create_project"
     headers = {
         **COMMON_HEADERS,
-        "Authorization": "Bearer valid_jwt_token_placeholder",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2ODM2NDI3LCJpYXQiOjE3NzY3NTAwMjcsImp0aSI6ImZlN2I2MmYzMjRlNDQ2ODdhZDFhYzNjYTQ0MzdlMDI0IiwidXNlcl9pZCI6NDc0fQ.vByXm-Rm5PMNsoiM5TDJXA--mKo4DKgGOHm3kKlUNeg",
         "Content-Type": "application/json"
     }
     request_body = {}
@@ -62,7 +62,7 @@ def test_tc003_create_project_empty_name():
     url = f"{BASE_URL}/api/project/create_project"
     headers = {
         **COMMON_HEADERS,
-        "Authorization": "Bearer valid_jwt_token_placeholder",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2ODM2NDI3LCJpYXQiOjE3NzY3NTAwMjcsImp0aSI6ImZlN2I2MmYzMjRlNDQ2ODdhZDFhYzNjYTQ0MzdlMDI0IiwidXNlcl9pZCI6NDc0fQ.vByXm-Rm5PMNsoiM5TDJXA--mKo4DKgGOHm3kKlUNeg",
         "Content-Type": "application/json"
     }
     request_body = {
@@ -115,7 +115,7 @@ def test_tc006_create_project_invalid_token():
     url = f"{BASE_URL}/api/project/create_project"
     headers = {
         **COMMON_HEADERS,
-        "Authorization": "Bearer invalid_jwt_token_placeholder",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2ODM2NDI3LCJpYXQiOjE3NzY3NTAwMjcsImp0aSI6ImZlN2I2MmYzMjRlNDQ2ODdhZDFhYzNjYTQ0MzdlMDI0IiwidXNlcl9pZCI6NDc0fQ.vByXm-Rm5PMNsoiM5TDJXA--mKo4DKgGOHm3kKlUNeg",
         "Content-Type": "application/json"
     }
     request_body = {
@@ -133,7 +133,7 @@ def test_tc007_list_projects_success():
     url = f"{BASE_URL}/api/project/list_projects/"
     headers = {
         **COMMON_HEADERS,
-        "Authorization": "Bearer valid_jwt_token_placeholder"
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2ODM2NDI3LCJpYXQiOjE3NzY3NTAwMjcsImp0aSI6ImZlN2I2MmYzMjRlNDQ2ODdhZDFhYzNjYTQ0MzdlMDI0IiwidXNlcl9pZCI6NDc0fQ.vByXm-Rm5PMNsoiM5TDJXA--mKo4DKgGOHm3kKlUNeg"
     }
     response = requests.get(url, headers=headers)
     assert response.status_code == 200
@@ -161,7 +161,7 @@ def test_tc008_list_projects_no_data():
     url = f"{BASE_URL}/api/project/list_projects/"
     headers = {
         **COMMON_HEADERS,
-        "Authorization": "Bearer valid_jwt_token_placeholder"
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2ODM2NDI3LCJpYXQiOjE3NzY3NTAwMjcsImp0aSI6ImZlN2I2MmYzMjRlNDQ2ODdhZDFhYzNjYTQ0MzdlMDI0IiwidXNlcl9pZCI6NDc0fQ.vByXm-Rm5PMNsoiM5TDJXA--mKo4DKgGOHm3kKlUNeg"
     }
     response = requests.get(url, headers=headers)
     assert response.status_code == 200
@@ -193,7 +193,7 @@ def test_tc010_list_projects_invalid_token():
     url = f"{BASE_URL}/api/project/list_projects/"
     headers = {
         **COMMON_HEADERS,
-        "Authorization": "Bearer invalid_jwt_token"
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2ODM2NDI3LCJpYXQiOjE3NzY3NTAwMjcsImp0aSI6ImZlN2I2MmYzMjRlNDQ2ODdhZDFhYzNjYTQ0MzdlMDI0IiwidXNlcl9pZCI6NDc0fQ.vByXm-Rm5PMNsoiM5TDJXA--mKo4DKgGOHm3kKlUNeg"
     }
     response = requests.get(url, headers=headers)
     assert response.status_code == 401
@@ -207,7 +207,7 @@ def test_tc011_create_project_edge_case_long_name():
     url = f"{BASE_URL}/api/project/create_project"
     headers = {
         **COMMON_HEADERS,
-        "Authorization": "Bearer your_real_jwt_token_here",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2ODM2NDI3LCJpYXQiOjE3NzY3NTAwMjcsImp0aSI6ImZlN2I2MmYzMjRlNDQ2ODdhZDFhYzNjYTQ0MzdlMDI0IiwidXNlcl9pZCI6NDc0fQ.vByXm-Rm5PMNsoiM5TDJXA--mKo4DKgGOHm3kKlUNeg",
         "Content-Type": "application/json"
     }
     payload = {
@@ -225,7 +225,7 @@ def test_tc012_create_project_edge_case_special_characters():
     url = f"{BASE_URL}/api/project/create_project"
     headers = {
         **COMMON_HEADERS,
-        "Authorization": "Bearer your_real_jwt_token_here",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzc2ODM2NDI3LCJpYXQiOjE3NzY3NTAwMjcsImp0aSI6ImZlN2I2MmYzMjRlNDQ2ODdhZDFhYzNjYTQ0MzdlMDI0IiwidXNlcl9pZCI6NDc0fQ.vByXm-Rm5PMNsoiM5TDJXA--mKo4DKgGOHm3kKlUNeg",
         "Content-Type": "application/json"
     }
     payload = {
